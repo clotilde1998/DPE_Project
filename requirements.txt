@@ -1,6 +1,6 @@
 setuptools>=82.0.1
 wheel>=0.40.0
-pandas==2.0.3 
+pandas==1.5.3 
 fastapi==0.115.0
 uvicorn==0.30.0
 numpy==1.26.4
