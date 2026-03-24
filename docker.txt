@@ -1,0 +1,22 @@
+# Utiliser Python 3.13 officiel pour Linux (compatible avec pandas wheels)
+FROM python:3.13-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier le fichier requirements.txt dans le container
+COPY requirements.txt .
+
+# Mettre à jour pip, setuptools et wheel, puis installer toutes les dépendances
+RUN pip install --upgrade pip setuptools wheel \
+    && pip install -r requirements.txt --prefer-binary
+
+# Copier tout le code source dans le container
+COPY . .
+
+# Exposer le port que Render utilise
+EXPOSE 10000
+
+# Commande par défaut pour lancer ton app FastAPI avec uvicorn
+# Remplace "main:app" par le fichier et l'objet FastAPI de ton projet
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
