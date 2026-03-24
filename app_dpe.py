@@ -14,7 +14,7 @@ st.set_page_config(
     layout="wide"
 )
 
-API_URL = "https://dpe-api.onrender.com"  # ✅ Remplace par ton URL Render après déploiement
+API_URL = "https://dpe-project.onrender.com"  #  URL Render après déploiement
 
 # ── THÈME ─────────────────────────────────────────────────────
 with st.sidebar:
